@@ -8,8 +8,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setupSecondView()
         setupInfoStackView()
+        setupSecondView()
         
     }
     
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.bottom.equalToSuperview()
-            make.top.equalToSuperview().offset(40)
+            make.top.equalTo(infoStackView.snp.bottom).offset(40)
         }
     }
 }
