@@ -1,29 +1,37 @@
-//
-//  ViewController.swift
-//  new
-//
-//  Created by Александр Андреев on 01.05.2023.
-//
-
 import SnapKit
 import UIKit
 
 class ViewController: UIViewController {
 
+    var secondView = UIView()
+    var infoStackView = UIStackView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialize()
+        //setupSecondView()
+        setupInfoStackView()
+        
     }
     
-    private func initialize() {
-        let background = UIColor(red: 241/255, green: 238/255, blue: 228/255, alpha: 1)
-        view.backgroundColor = background
-        let label = UILabel()
-        label.text = "✌️ Welcome!"
-        view.addSubview(label)
-        label.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(50)
-            make.top.equalToSuperview().inset(150)
+    private func setupInfoStackView() {
+        view.addSubview(infoStackView)
+        infoStackView.backgroundColor = .gray
+        infoStackView.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.top.equalToSuperview().offset(69)
+            make.bottom.equalToSuperview().offset(-679)
+        }
+    }
+    
+    private func setupSecondView() {
+        view.addSubview(secondView)
+        secondView.backgroundColor = .red
+        secondView.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.top.equalToSuperview().offset(40)
         }
     }
 }
